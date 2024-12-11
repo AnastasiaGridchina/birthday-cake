@@ -1,0 +1,52 @@
+.candle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    position: relative;
+}
+
+.stick {
+    width: 10px;
+    height: 50px;
+    background-color: #8b4513; /* Brown color */
+    border-radius: 5px;
+}
+
+.flame {
+    width: 15px;
+    height: 25px;
+    background: radial-gradient(circle, orange, red);
+    border-radius: 50%;
+    position: absolute;
+    top: -30px;
+    animation: flicker 0.2s infinite;
+}
+
+.flame.hidden {
+    opacity: 0;
+    animation: none;
+}
+
+.blow-button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #ff6347; /* Tomato color */
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.blow-button:hover {
+    background-color: #e55347; /* Darker tomato */
+}
+
+@keyframes flicker {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
