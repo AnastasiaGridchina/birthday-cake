@@ -6,7 +6,7 @@ const CakeComponent = () => {
     const numberOfCandles = 1;
 
     const candlesArray: number[] = Array.from({length: numberOfCandles}, (_, index) => index);
-     
+    // log
     return (
         <div className={styles.cake}>
             <div className={styles.cakeBase}>
