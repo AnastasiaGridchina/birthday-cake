@@ -6,7 +6,6 @@ body {
 }
 
 @mixin foodColoring($color) {
-  //background-color: $color;
   box-shadow: 0 2px 0px lighten($color, 5%),
   0 4px 0px darken($color, 8.2%),
   0 6px 0px darken($color, 8.4%),
@@ -26,19 +25,19 @@ body {
 
 .cake {
   position: absolute;
-  width: 250px;
-  height: 200px;
+  width: 400px;
+  height: 300px;
   top: 50%;
   left: 50%;
-  margin-top: -70px;
-  margin-left: -125px;
+  margin-top: -150px;
+  margin-left: -200px;
 }
 
 .plate {
-  width: 270px;
-  height: 110px;
+  width: 420px;
+  height: 130px;
   position: absolute;
-  bottom: -10px;
+  bottom: -15px;
   left: -10px;
   background-color: #ccc;
   border-radius: 50%;
@@ -54,31 +53,31 @@ body {
 .layer {
   position: absolute;
   display: block;
-  width: 250px;
-  height: 100px;
+  width: 400px;
+  height: 150px;
   border-radius: 50%;
   @include foodColoring($chocolate);
 }
 
 .layerTop {
-  background-color: #553c13;
+  background-color: $chocolate;
   top: 0px;
 }
 
 .layerMiddle {
-  top: 33px;
+  top: 50px;
 }
 
 .layerBottom {
-  top: 66px;
+  top: 100px;
 }
 
 .icing {
-  top: 2px;
-  left: 5px;
+  top: 5px;
+  left: 10px;
   background-color: $vanilla;
-  width: 240px;
-  height: 90px;
+  width: 380px;
+  height: 130px;
   border-radius: 50%;
 
   &:before {
@@ -99,41 +98,62 @@ body {
 
 .drip {
   display: block;
-  width: 50px;
-  height: 60px;
-  border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 25px;
+  width: 60px;
+  height: 70px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
   background-color: $vanilla;
 }
 
 .drip1 {
-  top: 53px;
-  left: 5px;
+  top: 80px;
+  left: 15px;
   transform: skewY(15deg);
-  height: 48px;
-  width: 40px;
+  height: 55px;
+  width: 45px;
 }
 
 .drip2 {
-  top: 69px;
-  left: 181px;
+  top: 90px;
+  left: 250px;
   transform: skewY(-15deg);
 }
 
 .drip3 {
-  top: 54px;
-  left: 90px;
-  width: 80px;
-  border-bottom-left-radius: 40px;
-  border-bottom-right-radius: 40px;
+  top: 75px;
+  left: 120px;
+  width: 100px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
 }
 
-.candle {
-  width: 16px;
-  height: 50px;
-  border-radius: 8px / 4px;
+.candleHolder {
+  position: absolute;
   top: -20px;
   left: 50%;
-  margin-left: -8px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  transform: translateX(-50%);
   z-index: 10;
 }
+
+//.candle {
+//  width: 20px;
+//  height: 60px;
+//  border-radius: 10px / 5px;
+//  //background-color: #ff6347; // Candle color
+//  z-index: 10;
+//}
+
+//.flame {
+//  width: 16px;
+//  height: 24px;
+//  background: radial-gradient(circle, orange, red);
+//  border-radius: 50%;
+//  position: absolute;
+//  top: -30px;
+//  left: 50%;
+//  transform: translateX(-50%);
+//}
