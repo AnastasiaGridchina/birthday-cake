@@ -6,7 +6,7 @@ body {
 }
 
 @mixin foodColoring($color) {
-  box-shadow: 0 2px 0px lighten($color, 5%),
+  box-shadow: 0 10px 0px lighten($color, 5%),
   0 4px 0px darken($color, 8.2%),
   0 6px 0px darken($color, 8.4%),
   0 8px 0px darken($color, 8.6%),
