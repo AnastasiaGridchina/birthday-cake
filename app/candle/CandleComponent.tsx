@@ -1,58 +1,37 @@
-"use client";
-
 import styles from './Candle.module.css';
 
-import React, {useEffect} from "react";
+import React from "react";
+import {CandlePositions} from "@/app/page";
 
 type CandleComponentProps = {
-    left: number;
-    top: number;
-    out: number;
-    key: number;
+    elementPositions: CandlePositions[],
+    isSoundDetected: boolean;
 }
 
-export const CandleComponent: React.FC<CandleComponentProps> = ({left, top, out, key}) => {
-    const [isBlownOut, setIsBlownOut] = React.useState(false);
+//Todo: remove blown candle
+//Todo: start from 0 candles
 
-    const startListening = async () => {
-        try {
-            const stream = await navigator.mediaDevices.getUserMedia({audio: true});
-            const audioContext = new AudioContext();
-            const analyser = audioContext.createAnalyser();
-            const source = audioContext.createMediaStreamSource(stream);
+//Todo:Find middle of the cake
 
-            source.connect(analyser);
-
-            const dataArray = new Uint8Array(analyser.frequencyBinCount);
-
-            function detectBlow() {
-                analyser.getByteFrequencyData(dataArray);
-                const volume =
-                    dataArray.reduce((sum, value) => sum + value, 0) / dataArray.length;
-
-                if (volume > 30) {
-                    // Trigger candle blowing out
-                    setIsBlownOut(true);
-                }
-            }
-
-            // Check for blowing sound at intervals
-            setInterval(detectBlow, 100);
-        } catch (err) {
-            console.error("Error accessing microphone:", err);
-        }
-    };
-
-    useEffect(() => {
-        startListening();
-    }, []);
-
+export const CandleComponent: React.FC<CandleComponentProps> = ({elementPositions, isSoundDetected}) => {
 
     return (
-        <div className={styles.candle} key={key}>
-            <div className={styles.stick}></div>
-            <div className={`${styles.flame} ${isBlownOut ? styles.hidden : ""}`}/>
-        </div>
+        <>
+            {elementPositions.map((position, i) => (
+                <div
+                    className={styles.candle}
+                    style={{
+                        position: "absolute",
+                        left: `${position.x}px`,
+                        top: `${position.y}px`,
+                    }}
+                    key={i}
+                >
+                    <div className={styles.stick}></div>
+                    <div className={`${styles.flame} ${isSoundDetected ? styles.hidden : ""}`}/>
+                </div>
+            ))}
+        </>
     )
 
 }

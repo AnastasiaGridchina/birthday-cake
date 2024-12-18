@@ -2,7 +2,7 @@ $vanilla: #f0e4d0;
 $chocolate: #553c13;
 
 body {
-  background-color: #333;
+  background-color: #6e3e3e;
 }
 
 @mixin foodColoring($color) {
@@ -20,7 +20,7 @@ body {
   0 24px 0px darken($color, 10.2%),
   0 26px 0px darken($color, 10.4%),
   0 28px 0px darken($color, 10.6%),
-  0 35px 0px darken($color, 10.8%);
+  0 50px 0px darken($color, 10.8%);
 }
 
 .cake {
@@ -130,30 +130,9 @@ body {
 .candleHolder {
   position: absolute;
   top: -20px;
-  left: 50%;
+  left: 18%;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   gap: 20px;
   transform: translateX(-50%);
   z-index: 10;
 }
-
-//.candle {
-//  width: 20px;
-//  height: 60px;
-//  border-radius: 10px / 5px;
-//  //background-color: #ff6347; // Candle color
-//  z-index: 10;
-//}
-
-//.flame {
-//  width: 16px;
-//  height: 24px;
-//  background: radial-gradient(circle, orange, red);
-//  border-radius: 50%;
-//  position: absolute;
-//  top: -30px;
-//  left: 50%;
-//  transform: translateX(-50%);
-//}

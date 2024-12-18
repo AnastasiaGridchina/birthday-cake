@@ -1,12 +1,14 @@
 import React from "react";
 import styles from "./Cake.module.scss"
 import {CandleComponent} from "@/app/candle/CandleComponent";
-import {AgeInput} from "@/app/age/AgeInput";
+import {CandlePositions} from "@/app/page";
 
-const CakeComponent = () => {
-    const numberOfCandles = 1;
+type CakeComponentProps = {
+    isSoundDetected: boolean,
+    elementPositions: CandlePositions[]
+}
 
-    const candlesArray: number[] = Array.from({length: 10}, (_, index) => index);
+const CakeComponent: React.FC<CakeComponentProps> = ({isSoundDetected, elementPositions}) => {
     return (
         <div className={styles.cake}>
             <div className={styles.plate}></div>
@@ -18,7 +20,7 @@ const CakeComponent = () => {
             <div className={styles.drip + " " + styles.drip2}></div>
             <div className={styles.drip + " " + styles.drip3}></div>
             <div className={styles.candleHolder}>
-                {candlesArray.map((index) => <CandleComponent key={index}/>)}
+                <CandleComponent isSoundDetected={isSoundDetected} elementPositions={elementPositions}/>
             </div>
         </div>
     );
@@ -26,4 +28,3 @@ const CakeComponent = () => {
 
 export default CakeComponent;
 
-//input component
