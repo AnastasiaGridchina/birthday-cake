@@ -10,7 +10,7 @@ export type CandlePositions = {
     x: number,
     y: number
 }
-//TODO: set the candles in the right space
+
 export default function Home() {
     const [age, setAge] = useState(0);
     const [candlePosition, setCandlePosition] = useState<CandlePositions[]>([{
@@ -55,12 +55,10 @@ export default function Home() {
                     dataArray.reduce((sum, value) => sum + value, 0) / dataArray.length;
 
                 if (volume > 30 && !isSoundDetected) {
-                    // Trigger candle blowing out
                     setIsSoundDetected(true);
                 }
             }
 
-            // Check for blowing sound at intervals
             setInterval(detectBlow, 100);
         } catch (err) {
             console.error("Error accessing microphone:", err);
@@ -83,17 +81,5 @@ export default function Home() {
 
         </>
     );
-}
-
-
-//Review project drafts
-// import {FaStar, FaStarHalfAlt} from "react-icons/fa";
-// import {CiStar} from "react-icons/ci";
-
-{/*<FaStar/>*/
-}
-{/*<FaStarHalfAlt/>*/
-}
-{/*<CiStar/>*/
 }
 

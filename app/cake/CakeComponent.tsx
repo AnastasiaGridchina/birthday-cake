@@ -20,7 +20,9 @@ const CakeComponent: React.FC<CakeComponentProps> = ({isSoundDetected, elementPo
             <div className={styles.drip + " " + styles.drip2}></div>
             <div className={styles.drip + " " + styles.drip3}></div>
             <div className={styles.candleHolder}>
-                <CandleComponent isSoundDetected={isSoundDetected} elementPositions={elementPositions}/>
+                {elementPositions.length ? (
+                    <CandleComponent isSoundDetected={isSoundDetected} elementPositions={elementPositions}/>
+                ) : null}
             </div>
         </div>
     );
