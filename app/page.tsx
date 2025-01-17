@@ -9,18 +9,13 @@ import {AgeInput} from "@/app/age/AgeInput";
 export type CandlePositions = {
     x: number,
     y: number
-}
+} | null;
 
 export default function Home() {
     const [age, setAge] = useState(0);
-    const [candlePosition, setCandlePosition] = useState<CandlePositions[]>([{
-        x: 0,
-        y: 0
-    }]);
+    const [candlePosition, setCandlePosition] = useState<CandlePositions[]>([]);
     const [isSoundDetected, setIsSoundDetected] = React.useState(false);
-
-//setting the dimensions for the candles on the cake
-
+    
     useEffect(() => {
         const newCandleEntries = Array.from(
             {length: age - candlePosition.length},
@@ -33,7 +28,6 @@ export default function Home() {
         setCandlePosition((existingCandles) => [...existingCandles, ...newCandleEntries]);
     }, [age, candlePosition.length]);
 
-    //listening to the audio
     useEffect(() => {
         startListening();
     }, []);

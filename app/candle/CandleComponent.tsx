@@ -1,4 +1,5 @@
 import styles from './Candle.module.css';
+import {motion} from "framer-motion";
 
 import React from "react";
 import {CandlePositions} from "@/app/page";
@@ -10,10 +11,26 @@ type CandleComponentProps = {
 
 export const CandleComponent: React.FC<CandleComponentProps> = ({elementPositions, isSoundDetected}) => {
 
+    const candleVariants = {
+        hidden: {
+            y: "-100vh", // Start above the screen
+            opacity: 0,
+        },
+        visible: {
+            y: 0, // Fall to the cake
+            opacity: 1,
+            transition: {
+                type: "spring",
+                stiffness: 50,
+                damping: 10,
+                duration: 1.5, // Customize the duration
+            },
+        },
+    };
     return (
         <>
             {elementPositions.map((position, i) => (
-                <div
+                <motion.div
                     className={styles.candle}
                     style={{
                         position: "absolute",
@@ -21,10 +38,14 @@ export const CandleComponent: React.FC<CandleComponentProps> = ({elementPosition
                         top: `${position?.y}px`,
                     }}
                     key={i}
+                    initial="hidden"
+                    animate="visible"
+                    variants={candleVariants}
+
                 >
                     <div className={styles.stick}></div>
                     <div className={`${styles.flame} ${isSoundDetected ? styles.hidden : ""}`}/>
-                </div>
+                </motion.div>
             ))}
         </>
     )
