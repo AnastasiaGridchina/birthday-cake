@@ -15,7 +15,7 @@ export default function Home() {
     const [age, setAge] = useState(0);
     const [candlePosition, setCandlePosition] = useState<CandlePositions[]>([]);
     const [isSoundDetected, setIsSoundDetected] = React.useState(false);
-    
+
     useEffect(() => {
         const newCandleEntries = Array.from(
             {length: age - candlePosition.length},

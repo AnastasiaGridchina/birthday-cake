@@ -1,5 +1,5 @@
 import styles from './Candle.module.css';
-import {motion} from "framer-motion";
+import {AnimatePresence, motion} from "framer-motion";
 
 import React from "react";
 import {CandlePositions} from "@/app/page";

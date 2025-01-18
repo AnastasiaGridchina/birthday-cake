@@ -19,14 +19,16 @@ export const AgeInput: React.FC<AgeInputProps> = ({age, setAge, isSoundDetected}
     return (
         <div className="mt-10 text-center space-y-6">
             {isSoundDetected ? (
-                <div className="space-y-2">
+                <div className="space-y-2 pb-2 pt-12">
                     <h1 className="text-3xl font-extrabold text-white">🎉 Happy Birthday! 🎉</h1>
-                    <p className="text-lg text-white">Your wish has been made!</p>
                 </div>
             ) : (
                 <div>
-                    <p className="text-xl font-medium text-white">Enter Your Age</p>
-                    <p className="text-lg font-semibold text-white">Make a Wish 🎂</p>
+                    <div className="pb-2">
+                        <p className="text-xl font-medium text-white">Enter Your Age</p>
+                        <p className="text-xl font-medium text-white">&</p>
+                        <p className="text-lg font-semibold text-white">Make a Wish 🎂</p>
+                    </div>
                     <input
                         type="number"
                         value={age === 0 ? "" : age}
