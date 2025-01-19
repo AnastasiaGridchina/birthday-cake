@@ -18,7 +18,7 @@ export const AgeInput: React.FC<AgeInputProps> = ({age, setAge, isSoundDetected}
 
     return (
         <div className="mt-10 text-center space-y-6">
-            {isSoundDetected ? (
+            {isSoundDetected && age > 1 ? (
                 <div className="space-y-2 pb-2 pt-12">
                     <h1 className="text-3xl font-extrabold text-white">🎉 Happy Birthday! 🎉</h1>
                 </div>
