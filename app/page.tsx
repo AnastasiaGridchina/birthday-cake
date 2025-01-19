@@ -72,7 +72,17 @@ export default function Home() {
                 <CakeComponent isSoundDetected={isSoundDetected} elementPositions={candlePosition}/>
             </main>
 
-
+            <footer className="text-center mt-4 p-2 ">
+                Created by
+                <a
+                    href="https://github.com/darklammm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline text-brown-600 hover:text-brown-800"
+                >
+                    {" "}Anastasia Gridchina
+                </a>
+            </footer>
         </>
     );
 }
