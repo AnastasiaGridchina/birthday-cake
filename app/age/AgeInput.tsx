@@ -35,7 +35,7 @@ export const AgeInput: React.FC<AgeInputProps> = ({age, setAge, isSoundDetected}
                         onChange={handleInputChange}
                         min="0"
                         max="122"
-                        className="w-full sm:w-64 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400"/>
+                        className="w-64 sm:w-64 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400"/>
                     <div className="mt-4 space-y-4">
                         {age > 0 && <p className="text-white text-base">Blow out the candles below:</p>}
                     </div>
