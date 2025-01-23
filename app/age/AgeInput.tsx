@@ -8,6 +8,7 @@ type AgeInputProps = {
 
 export const AgeInput: React.FC<AgeInputProps> = ({age, setAge, isSoundDetected}) => {
 
+    //d
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = Number(e.target.value);
