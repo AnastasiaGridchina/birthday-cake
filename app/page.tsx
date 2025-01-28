@@ -80,7 +80,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="underline text-brown-600 hover:text-brown-800"
                 >
-                    {" "}Anastasia Gridchina
+                    Anastasia Gridchina
                 </a>
             </footer>
         </>
